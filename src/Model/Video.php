@@ -11,6 +11,8 @@ class Video
     /** @var \DateInterval */
     protected $duracao;
 
+    protected const URL_VIDEO = 'http://videos.alura.com.br/';
+
     public function __construct(string $nome)
     {
         $this->nome = $nome;
@@ -30,6 +32,6 @@ class Video
 
     public function recuperarUrl(): string
     {
-        return 'http://videos.alura.com.br/' . http_build_query(['nome' => $this->nome]);
+        return self::URL_VIDEO . http_build_query(['nome' => $this->nome]);
     }
 }
